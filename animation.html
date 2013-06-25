@@ -1,0 +1,83 @@
+<html>
+<head>
+<script>
+function animateOut(t,n) {
+	var target = t;
+	maxh = 306;
+	maxw = 306;
+	minh = 0;
+	var b = document.getElementById(t);
+	var h = b.style.height;
+	h = h.replace('px','');
+	var direction = 0;
+	var timer = setInterval( 
+		function() { 
+			if (h > minh && !direction) { 
+				h = parseInt(h * 0.5); 
+				b.style.height = h+'px'; 
+				b.style.width = h+'px'; 
+			} else if (h == 0) { 
+				b.src=n; direction == 1; 
+				clearInterval(timer); 
+				h = 1;
+				var t2 = setTimeout( 
+						function() { 
+							var timer2 = setInterval( 
+								function() {
+									if (h < maxh) {	
+										h = h*1.1;
+										if (h > maxh) { h = maxh; }
+										console.log('h: ' + h);
+										b.style.height = parseInt(h)+'px'; 
+										b.style.width = parseInt(h)+'px'; 
+									} else if (h == maxh) { 
+										clearInterval(timer2); 
+									}
+									}, 1
+								);
+ 						},100
+				);
+			}
+		}, 30
+	);
+}
+
+</script>
+<style>
+.outerwrap {
+	float:left;
+
+}
+.wrapper	{
+	margin: 0px auto;
+	border: black solid 1px;
+	width: 306px;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+	height: 307px;
+}
+
+/* img { vertical-align: middle; } */
+</style>
+</head>
+<body>
+<div style="margin: 0px auto; border: black solid 1px; width: 800px;">
+
+<div class="outerwrap">
+ <div class="wrapper">
+  <img src="tmp.jpg" style="width: 306px; height: 306px" id="billede01">
+ </div>
+</div>
+
+<div class="outerwrap">
+ <div class="wrapper">
+  <img src="tmp.jpg" style="width: 306px; height: 306px" id="billede01">
+ </div>
+</div>
+<div style="clear:both"></div>
+
+  <div style="border: black solid 1px; margin: 10px;padding: 5px; width: 100px; " id="knap" onClick="animateOut('billede01','tmp2.jpg');">animer</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+<script>
+function sayStuff(s) {
+	setTimeout( function() { 
+			document.getElementById('out').innerHTML = s; 
+	}, 2000);
+	return true;
+}
+</script>
+</head>
+<body>
+<div onClick="javascript:sayStuff('hejsa der');">klik mig</div> 
+<div id="out"></div>
+</body>
+</html>
