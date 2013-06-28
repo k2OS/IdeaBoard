@@ -10,8 +10,8 @@ body	{
 	padding: 0px;
 	margin: 0px auto;
 	border: none;
-	width: 1224px;
-	height: 612px;
+	width: 640px;
+	height: 1280px;
 }
 
 #instabox {
@@ -24,7 +24,7 @@ body	{
 }
 #box {
         margin: 0 auto;
-	margin-top: 60px;
+	margin-top: 40px;
         display: table;
 	/* border: black solid 1px;*/
 	border: none;
@@ -36,13 +36,13 @@ body	{
 .super {
 	float: left;
 	margin: 0px;
-	width: 306px;
-	height: 306px;
+	width: 320px;
+	height: 320px;
 
 }
 .container {
-	width: 306px;
-	height: 306px;
+	width: 320px;
+	height: 320px;
 	margin: 0px auto;
 	display: table-cell;
 	vertical-align: middle;
@@ -77,8 +77,8 @@ function mkImages(maxImages) {
 
    newimg.setAttribute('id',imgIdName);
    newimg.setAttribute('src','keepcalm2' + ("00" + numPics).slice(-2) + '.jpg');
-   newimg.setAttribute('width',306);
-   newimg.setAttribute('height',306);
+   newimg.setAttribute('width',320);
+   newimg.setAttribute('height',320);
    newimg.setAttribute('style','opacity: 1');
 
    newdiv.appendChild(newimg);
@@ -98,8 +98,8 @@ function mkImages(maxImages) {
 function animateOut(t,n) {
  	//t.src=n; return true; // uncomment this line if the there are _lots_ of pictures coming in
         var target = t;
-        maxh = 306;
-        maxw = 306;
+        maxh = 320;
+        maxw = 320;
         minh = 0;
         var b = t;
         var h = t.style.height;
@@ -121,7 +121,7 @@ function animateOut(t,n) {
                                                         var timer2 = setInterval(
                                                                 function() {
                                                                         if (h < maxh) {
-                                                                                h = h*1.1;
+                                                                                h = h*1.2;
                                                                                 if (h > maxh) { h = maxh; }
 										b.style.height = parseInt(h)+'px';
 										b.style.width = parseInt(h)+'px';
@@ -130,7 +130,7 @@ function animateOut(t,n) {
 									}
                                                                         }, 1
                                                                 );
-                                                },1000
+                                                },800
                                 );
                         }
                 }, 30
@@ -194,7 +194,7 @@ var options = {
     	var interval = setInterval(function() {
 		feed.run();
 	}, 4000);
-    },6000);
+    },5000);
 
 </script>
 </body>
